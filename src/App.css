@@ -1,1 +1,310 @@
+/* Container */
+.container {
+  display: flex;
+  height: 100vh;
+}
 
+/* Left Section */
+.leftSection {
+  width: 30%;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.leftTop {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.groupsList {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.groupItemContainer {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.groupItemCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.groupItemText {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.leftBottom {
+  font-size: 40px;
+  color: white;
+  background-color: blue;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Right Section */
+.rightSection {
+  width: 70%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.rightCenter {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.rightBottom {
+  font-size: 14px;
+  color: gray;
+}
+
+.groupContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: blue;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.groupHeaderCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.groupHeaderText {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.messageList {
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin: 20px 0;
+}
+
+.messageItem {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: left;
+  background-color: #e0f7ff;
+}
+
+.messageTimestamp {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: gray;
+  text-align: right;
+}
+
+/* Input Section */
+.inputContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  position: relative;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.sendButton {
+  position: absolute;
+  right: 15px;
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .leftSection {
+    width: 100%;
+    height: 50%;
+  }
+
+  .rightSection {
+    width: 100%;
+    height: 50%;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .leftSection {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .rightSection {
+    display: none;
+  }
+
+  .popupOverlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .popupContent {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .groupContainer {
+    display: none;
+  }
+
+  .notepadContainer {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Popup */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.colorOptionsContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.colorOption {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.errorText {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.addButton {
+  background-color: green;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.cancelButton {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  background-color: gray;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
